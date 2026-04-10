@@ -1,0 +1,313 @@
+/* Базові налаштування та змінні */
+:root {
+  --primary-color: #3498db;
+  --accent-color: #e74c3c;
+  --card-bg: #ffffff;
+  --bg-color: #f4f7f6;
+  --text-color: #333;
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding-bottom: 50px;
+}
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #2c3e50;
+}
+
+/* додатк завд 2 навігац меню */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 15px 5vw;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: none; /* Приховано на мобільних */
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  background-color: var(--card-bg);
+  text-align: center;
+}
+
+.nav-links li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: block;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Показуємо меню при натисканні (CSS хак) */
+#menu-toggle:checked ~ .nav-links {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* Ховаємо гамбургер на десктопі */
+  }
+  .nav-links {
+    display: flex; /* Показуємо горизонтальне меню */
+    flex-direction: row;
+    position: static;
+    width: auto;
+  }
+}
+
+/* основне завд */
+.pricing-section {
+  padding: 20px 5vw;
+}
+
+/* Крок 2: Верстка мобільної версії (Mobile First) */
+.pricing-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Крок 4: Застосування плавних переходів */
+.pricing-card {
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eaeaea;
+}
+
+.pricing-card:hover {
+  transform: scale(1.05); /* Збільшення при наведенні за макетом */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.popular {
+  border: 2px solid var(--primary-color);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.price span {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.features {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.features li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  color: #7f8c8d;
+}
+
+/* Крок 5: Анімація пульсації */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cta-button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+.cta-button.accent {
+  background-color: var(--accent-color);
+}
+
+/* Крок 3: Брейкпоінти */
+@media (min-width: 768px) {
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .pricing-card:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .pricing-card:last-child {
+    grid-column: auto;
+  }
+}
+
+/* додатк завдан 5 секція відгуків */
+.testimonials-section {
+  min-height: 40vh;
+  padding: 5vh 5vw;
+  background-color: #eef2f5;
+  margin-top: 50px;
+}
+
+.testimonials-container {
+  display: flex;
+  flex-direction: column; /* Мобільна колонка */
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+}
+
+.testimonial-card h4 {
+  margin-top: 15px;
+  text-align: right;
+  color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+  .testimonials-container {
+    flex-direction: row; /* Десктопний ряд (Flexbox) */
+  }
+}
+
+/* Анімація Fade-in при завантаженні */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-section {
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+/* додатк. завд 11 */
+.kanban-section {
+  padding: 40px 5vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: 1fr; /* Мобільна довга колонка */
+  gap: 20px;
+}
+
+.kanban-column {
+  background-color: #ebecf0;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.column-title {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  color: #172b4d;
+}
+
+.kanban-card {
+  background-color: var(--card-bg);
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  cursor: grab;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Ефект “підняття” при hover */
+.kanban-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 1024px) {
+  .kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 стовпці на десктопі */
+  }
+}

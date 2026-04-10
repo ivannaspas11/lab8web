@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Адаптивна сторінка</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">MyBrand</div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="hamburger">&#9776;</label>
+        <ul class="nav-links">
+          <li><a href="#">Головна</a></li>
+          <li><a href="#">Тарифи</a></li>
+          <li><a href="#">Відгуки</a></li>
+          <li><a href="#">Завдання</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="pricing-section">
+        <h2 class="section-title">Оберіть свій тариф</h2>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Базовий</h3>
+            <div class="price">₴500<span>/міс</span></div>
+            <ul class="features">
+              <li>1 Користувач</li>
+              <li>5 ГБ Пам'яті</li>
+              <li>Базова підтримка</li>
+            </ul>
+            <button class="cta-button">Обрати</button>
+          </div>
+
+          <div class="pricing-card popular">
+            <div class="badge">Популярний</div>
+            <h3>Професійний</h3>
+            <div class="price">₴1200<span>/міс</span></div>
+            <ul class="features">
+              <li>5 Користувачів</li>
+              <li>50 ГБ Пам'яті</li>
+              <li>Пріоритетна підтримка</li>
+            </ul>
+            <button class="cta-button accent">Обрати</button>
+          </div>
+
+          <div class="pricing-card">
+            <h3>Преміум</h3>
+            <div class="price">₴2500<span>/міс</span></div>
+            <ul class="features">
+              <li>Безліміт Користувачів</li>
+              <li>1 ТБ Пам'яті</li>
+              <li>24/7 Підтримка</li>
+            </ul>
+            <button class="cta-button">Обрати</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section fade-in-section">
+        <h2 class="section-title">Відгуки клієнтів</h2>
+        <div class="testimonials-container">
+          <div class="testimonial-card">
+            <p>"Чудовий сервіс, дуже допоміг у роботі!"</p>
+            <h4>— Олексій В.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"Швидка підтримка та зручний інтерфейс."</p>
+            <h4>— Марія К.</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>"Найкраще співвідношення ціни та якості."</p>
+            <h4>— Іван С.</h4>
+          </div>
+        </div>
+      </section>
+
+      <section class="kanban-section">
+        <h2 class="section-title">Канбан дошка</h2>
+        <div class="kanban-board">
+          <div class="kanban-column">
+            <h3 class="column-title">Заплановано</h3>
+            <div class="kanban-card">Вивчити Flexbox</div>
+            <div class="kanban-card">Налаштувати GitHub</div>
+          </div>
+
+          <div class="kanban-column">
+            <h3 class="column-title">В роботі</h3>
+            <div class="kanban-card">Створити Pricing Table</div>
+            <div class="kanban-card">Адаптивна верстка</div>
+          </div>
+
+          <div class="kanban-column">
+            <h3 class="column-title">Виконано</h3>
+            <div class="kanban-card">Лабораторну роботу 8</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
